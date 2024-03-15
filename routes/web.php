@@ -9,9 +9,9 @@ Route::get('/', function () {
 });
 
 Route::resource('provincias', ProvinciaController::class);
-#Route::resource('ciudades', CiudadController::class);
+Route::resource('ciudades', CiudadController::class);
 
-Route::get('ciudades', [CiudadController::class, 'index']);
+Route::get('ciudadesApi', [CiudadController::class, 'indexApi']);
 
 Auth::routes();
 

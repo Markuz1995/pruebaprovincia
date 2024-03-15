@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Ciudad;
+use App\Models\Provincia;
 
 
 class CiudadController extends Controller
@@ -14,15 +15,24 @@ class CiudadController extends Controller
     public function index()
     {
         $ciudades = Ciudad::with('provincia')->get();
+        return view('ciudades.index', compact('ciudades'));
+    }
+
+    public function indexApi()
+    {
+        $ciudades = Ciudad::with('provincia')->get();
         return response()->json($ciudades);
     }
+
 
     /**
      * Show the form for creating a new resource.
      */
     public function create()
     {
-        return view('ciudades.create');
+        $provincias = Provincia::all();
+
+        return view('ciudades.create', compact('provincias'));
     }
 
     /**

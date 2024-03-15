@@ -22,7 +22,7 @@ class ProvinciaController extends Controller
      */
     public function create()
     {
-        return view('provincias.form');
+        return view('provincias.create');
     }
 
     /**

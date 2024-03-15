@@ -8,6 +8,9 @@
                 <div class="card-header">Lista de Ciudades</div>
 
                 <div class="card-body">
+                    <div class="mb-3">
+                        <a href="{{ route('ciudades.create') }}" class="btn btn-success">Crear Ciudad</a>
+                    </div>
                     <div class="table-responsive">
                         <table class="table table-bordered">
                             <thead>
