@@ -16,7 +16,7 @@
                         </div>
                         <div class="form-group">
                             <label for="provincia_id">Provincia:</label>
-                            <select class="form-control" id="provincia_id" name="provincia_id">
+                            <select class="form-control select2" id="provincia_id" name="provincia_id">
                                 @foreach($provincias as $provincia)
                                 <option value="{{ $provincia->id }}">{{ $provincia->descripcion }}</option>
                                 @endforeach
@@ -29,23 +29,10 @@
         </div>
     </div>
 </div>
-@endsection
 
-@section('scripts')
-<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js"></script>
 <script>
     $(document).ready(function() {
-        $('#provincia_id').select2({
-            placeholder: 'Seleccione una provincia', // Texto de marcador de posición
-            allowClear: true, // Permitir limpiar la selección
-            dropdownParent: $('#provincia_id').parent(),
-            minimumInputLength: 2 // Mínimo de caracteres antes de mostrar resultados de búsqueda
-        });
+        $('#provincia_id').select2();
     });
 </script>
-@endsection
-
-
-@section('styles')
-<link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css" rel="stylesheet" />
 @endsection
